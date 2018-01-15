@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<html>
+
+<head> 
+	<meta charset="utf8">
+	<title>ノベルゲーム</title>
+	<link rel="stylesheet" href="style.css">
+	<!--#novelwindow の h1 に対する処理-->
+	<style>	
+		#novelwindow{
+			background-color: #114514;
+		}
+		#novelwindow > h1{
+			margin-top: 200px;
+		}
+		
+		#novelwindow > form > button{
+			width: 300px;
+			height: 100px;
+			margin-bottom: 30px;
+		}
+	</style>
+</head>
+
+<body>
+	<section id="novelwindow">
+		<section id="textwindow">
+			<h1>エンディング</h1>
+		</section>
+	</section>
+	
+	<script>
+		// 背景画像の変更
+		var novelWindow = document.querySelector("#novelwindow");
+		novelWindow.style.backgroundImage = 'url(image/bg/ending1.png)';
+		
+		var box = document.querySelector("#novelwindow");
+		// ウィンドウがクリックされたら
+		box.addEventListener("click", function(){
+				// タイトルに遷移する
+				window.location.href = 'title.html';
+			}
+		);
+	</script>
+	
+</body>
+
+</html>

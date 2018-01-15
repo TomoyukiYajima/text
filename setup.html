@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+<html>
+
+<head> 
+	<meta charset="utf8">
+	<title>ノベルゲーム</title>	
+	<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+	<section id="novelwindow">
+		<section id="textwindow">
+			<h1>主人公の名前を入力してください</h1>
+		</section>
+		
+		<form action="Novel.php" method="GET">
+			<input type="text" name="playername">
+			<button id="decisionButton">決定!</button>
+		</form>
+		
+		<section id="bottomwindow">
+			<form action="title.html" method="GET">
+				<button id="titleButton">タイトルに戻る</button>
+			</form>
+		</section>
+	</section>
+	
+	<audio id="se" src="sound/se/datadecision.ogg" preload></audio>
+	
+	<script>
+		// ボタンが押された時の処理
+		var btn = document.querySelector("#titleButton");
+		btn.addEventListener("click", function() { playSE("sound/se/datadecision.ogg"); } );
+		var btn2 = document.querySelector("#decisionButton");
+		btn2.addEventListener("click", function() { playSE("sound/se/namedecision.ogg"); } );
+		// SEの再生
+		function playSE(value){
+			var se = document.querySelector("#se");
+			//se.setAttribute("src", value);
+			se.play();
+		}
+	</script>
+</body>
+
+</html>

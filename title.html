@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+
+<html>
+
+<head> 
+	<meta charset="utf8">
+	<title>ノベルゲーム</title>
+	<link rel="stylesheet" href="style.css">
+	<!--#novelwindow の h1 に対する処理-->
+	<style>
+		#novelwindow > h1{
+			margin-top: 200px;
+		}
+		
+		#novelwindow > form > button{
+			width: 300px;
+			height: 100px;
+			margin-bottom: 30px;
+		}
+	</style>
+</head>
+
+<body>
+	<section id="novelwindow">
+		<section id="textwindow">
+			<h1>拳聖</h1>
+		</section>
+		
+		<!--何も指定しない場合はGETになる-->
+		<!--POSTに変更する-->
+		<form action="setup.html" method="GET">
+			<button id="sceneButton1">ニューゲーム</button>
+		</form>
+		<form action="Load.php" method="POST">
+			<button id="sceneButton2" name="sceneName" value="title.html">ゲームスタート!</button>
+		</form>
+		
+	</section>
+	
+	<audio id="se" src="sound/se/datadecision.ogg" preload></audio>
+	
+	<script>
+		// ボタンが押された時の処理
+		var btn = document.querySelector("#sceneButton1");
+		btn.addEventListener("click", function() { playSE(); } );
+		var btn2 = document.querySelector("#sceneButton2");
+		btn2.addEventListener("click", function() { playSE(); } );
+		// SEの再生
+		function playSE(){
+			var se = document.querySelector("#se");
+			se.play();
+		}
+	</script>
+	
+</body>
+
+</html>
